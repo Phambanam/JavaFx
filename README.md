@@ -1,1 +1,2 @@
-"# JavaFx" 
+How to Play Caro
+Playing Caro is pretty straightforward. It is played using the X and O symbol. Two players play against each other on 15 x 15 or 19 x 19 grid. The player representing the “X” symbol gets to take the first turn followed by the player representing the “O” symbol. Players take turns placing their symbol on an open intersection on the board. It is very much a game of strategy, as players have to race to create an unbroken row of five symbols while blocking their opponent to prevent them from creating five in a row. The player that manages to create five in a row first wins the round. The row can be horizontal, vertical, or diagonal as long as it is unbroken.

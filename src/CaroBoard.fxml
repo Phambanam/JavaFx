@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="388.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerCaroBoard">
+   <children>
+      <Separator layoutX="141.0" orientation="VERTICAL" prefHeight="301.0" prefWidth="3.0" />
+      <Separator layoutX="364.0" orientation="VERTICAL" prefHeight="301.0" prefWidth="11.0" />
+      <Separator layoutX="143.0" layoutY="1.0" prefHeight="3.0" prefWidth="224.0" />
+      <Separator layoutX="144.0" layoutY="301.0" prefHeight="3.0" prefWidth="224.0">
+         <effect>
+            <Glow level="0.61" />
+         </effect>
+      </Separator>
+      <Label layoutX="24.0" layoutY="14.0" text="Name player 1" textFill="#b55b27">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="400.0" layoutY="14.0" text="Name player  2" textFill="#a6a82c">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="342.0" text="Score" textFill="#8ddd3e">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="pause" layoutX="310.0" layoutY="352.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" text="Pause" textFill="#d32f2c">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="resume" layoutX="379.0" layoutY="352.0" mnemonicParsing="false" text="Resume" textFill="#36d348">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="exit" layoutX="447.0" layoutY="352.0" mnemonicParsing="false" onAction="#CaroBoardExit" prefHeight="30.0" prefWidth="69.0" text="Exit" textFill="#252522">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="lbName1" layoutX="15.0" layoutY="47.0" prefHeight="17.0" prefWidth="107.0" />
+      <Label fx:id="lbName2" layoutX="394.0" layoutY="47.0" prefHeight="17.0" prefWidth="107.0" />
+      <Label fx:id="lbScore1" layoutX="186.0" layoutY="344.0" text="Score1" />
+      <Label layoutX="228.0" layoutY="344.0" text=":" />
+      <Label fx:id="lbScore2" layoutX="239.0" layoutY="344.0" text="Score2" />
+      <Button layoutX="144.0" layoutY="2.0" mnemonicParsing="false" prefWidth="25.0" text="Button" />
+      <Button layoutX="344.0" layoutY="2.0" mnemonicParsing="false" prefWidth="25.0" text="Button" />
+      <Button layoutX="144.0" layoutY="277.0" mnemonicParsing="false" prefWidth="25.0" text="Button" />
+      <Button layoutX="344.0" layoutY="277.0" mnemonicParsing="false" prefWidth="25.0" text="Button" />
+      <Button layoutX="167.0" layoutY="2.0" mnemonicParsing="false" prefWidth="25.0" text="Button" />
+   </children>
+</AnchorPane>
