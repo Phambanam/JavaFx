@@ -2,9 +2,13 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Main extends Application {
 
@@ -14,9 +18,21 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-     Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
-     Scene scene = new Scene(root);
-     primaryStage.setScene(scene);
-     primaryStage.show();
+
+        FXMLLoader loader = new FXMLLoader();
+        primaryStage.setResizable(false);
+        loader.setLocation(getClass().getResource("/sample.fxml"));
+        Parent parent = loader.load();
+        Pane gr = new Pane();
+        Image image = new Image("/image/Background1.jpeg",600,500,false,true);
+        ImageView mv = new ImageView(image);
+
+        gr.getChildren().addAll(mv,parent);
+
+        Scene scene = new Scene(gr);
+        primaryStage.setTitle("GAME C-A-R-O");
+        primaryStage.getIcons().add(new Image("/image/iconGame.jfif"));
+        primaryStage.setScene(scene);
+        primaryStage.show();
 }
 }
