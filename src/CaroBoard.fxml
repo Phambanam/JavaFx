@@ -1,56 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="388.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerCaroBoard">
+    <children>
 
-      <Label layoutX="9.0" layoutY="17.0" text="Name player 1" textFill="#b55b27">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="7.0" layoutY="130.0" text="Name player  2" textFill="#a6a82c">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="9.0" layoutY="88.0" text="Score" textFill="#8ddd3e">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Button fx:id="newGAme" layoutX="28.0" layoutY="194.0" mnemonicParsing="false" onAction="#CaroBoardNewGame" prefHeight="30.0" prefWidth="90.0" text="New Game" textFill="#d32f2c">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="resume" layoutX="28.0" layoutY="237.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Change" textFill="#36d348">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Button fx:id="exit" layoutX="28.0" layoutY="281.0" mnemonicParsing="false" onAction="#CaroBoardExit" prefHeight="30.0" prefWidth="90.0" text="Exit" textFill="#252522">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Label fx:id="lbName1" layoutX="9.0" layoutY="44.0" prefHeight="17.0" prefWidth="107.0" text="Name1" textFill="#cd2525">
-         <font>
-            <Font size="16.0" />
-         </font></Label>
-      <Label fx:id="lbName2" layoutX="9.0" layoutY="156.0" prefHeight="17.0" prefWidth="107.0" text="name2" textFill="#f20303">
-         <font>
-            <Font size="16.0" />
-         </font></Label>
-      <Label fx:id="lbScore1" layoutX="68.0" layoutY="92.0" text="0">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
-      <Label layoutX="85.0" layoutY="98.0" prefHeight="17.0" prefWidth="26.0" text=":" />
-      <Label fx:id="lbScore2" layoutX="98.0" layoutY="91.0" text="0">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
+        <Label layoutX="9.0" layoutY="17.0" text="Name player 1" textFill="#b55b27">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="7.0" layoutY="76.0" text="Name player  2" textFill="#a6a82c">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Button fx:id="exit" layoutX="28.0" layoutY="281.0" mnemonicParsing="false" onAction="#CaroBoardExit" prefHeight="30.0" prefWidth="90.0" text="Exit" textFill="#252522">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Label fx:id="lbName1" layoutX="9.0" layoutY="44.0" prefHeight="17.0" prefWidth="107.0" text="Name1" textFill="#cd2525">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="lbName2" layoutX="9.0" layoutY="102.0" prefHeight="17.0" prefWidth="107.0" text="name2" textFill="#f20303">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <ProgressBar layoutX="1.0" layoutY="181.0" prefHeight="18.0" prefWidth="119.0" progress="0.0" />
+        <Label layoutX="4.0" layoutY="143.0" prefHeight="17.0" prefWidth="113.0" text="Name player">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
 
 </AnchorPane>

@@ -32,7 +32,7 @@ public class Controller {
             alert.setContentText(" Retype the player1 name ");
             alert.show();
         }
-            else Name1.setOnAction(event1 -> Name2.requestFocus());
+        else Name1.setOnAction(event1 -> Name2.requestFocus());
     }
     public  void CheckName2(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -52,21 +52,20 @@ public class Controller {
         stage.setTitle("GAME C-A-R-O");
         stage.getIcons().add(new Image("/image/iconGame.jfif"));
 
-        Image image = new Image("/image/Background@.jpeg",600,500,false,true);
-        ImageView mv = new ImageView(image);
-        gr.getChildren().addAll(mv,parent);
+        gr.getChildren().addAll(parent);
         ControllerCaroBoard controller = loader.getController();
         CaroBoard caroBoard = new CaroBoard();
         caroBoard.caroBoard(gr,Name1.getText(),Name2.getText());
         Scene scene = new Scene(gr);
 
-       controller.setNamePlayer1(Name1.getText());
-       controller.setNamePlayer2(Name2.getText());
+        controller.setNamePlayer1(Name1.getText());
+        controller.setNamePlayer2(Name2.getText());
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         if(Name1.getText().isEmpty() || Name2.getText().isEmpty() ) {
             alert.setContentText(" Retype the player name ");
             alert.show();
         } else  stage.setScene(scene);
     }
+
 
 }
