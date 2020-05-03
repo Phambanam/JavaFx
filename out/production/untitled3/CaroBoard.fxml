@@ -13,7 +13,7 @@
                 <Font size="14.0" />
             </font>
         </Label>
-        <Label layoutX="7.0" layoutY="76.0" text="Name player  2" textFill="#a6a82c">
+        <Label layoutX="7.0" layoutY="62.0" text="Name player  2" textFill="#a6a82c">
             <font>
                 <Font size="14.0" />
             </font>
@@ -23,12 +23,12 @@
                 <Font size="14.0" />
             </font>
         </Button>
-        <Label fx:id="lbName1" layoutX="9.0" layoutY="44.0" prefHeight="17.0" prefWidth="107.0" textFill="#cd2525">
+        <Label fx:id="lbName1" layoutX="10.0" layoutY="37.0" prefHeight="17.0" prefWidth="107.0" textFill="#cd2525">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbName2" layoutX="9.0" layoutY="102.0" prefHeight="17.0" prefWidth="107.0" textFill="#f20303">
+        <Label fx:id="lbName2" layoutX="6.0" layoutY="82.0" prefHeight="17.0" prefWidth="107.0" textFill="#f20303">
             <font>
                 <Font size="16.0" />
             </font>
@@ -45,6 +45,22 @@
          </font>
       </Label>
       <Label fx:id="lbPlaying" layoutX="13.0" layoutY="147.0" prefHeight="46.0" prefWidth="100.0" text="lbPlaying" textFill="#141413">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="119.0" text="Score">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbScore1" alignment="CENTER" layoutX="51.0" layoutY="121.0" textFill="#cd2727">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="63.0" layoutY="119.0" prefHeight="17.0" prefWidth="15.0" text=":" />
+      <Label fx:id="lbScore2" layoutX="83.0" layoutY="121.0" textFill="#b2c992">
          <font>
             <Font size="14.0" />
          </font>

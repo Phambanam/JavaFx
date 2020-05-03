@@ -28,8 +28,6 @@ public class Main extends Application {
         Pane gr = new Pane();
         gr.getChildren().addAll(parent);
         Scene scene = new Scene(gr);
-
-
         primaryStage.setTitle("GAME C-A-R-O");
         primaryStage.getIcons().add(new Image("/image/iconGame.jfif"));
         primaryStage.setScene(scene);
