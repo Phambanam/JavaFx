@@ -13,17 +13,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-import java.awt.*;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.Optional;
-
 import static javafx.scene.control.ButtonBar.ButtonData.CANCEL_CLOSE;
-import static javafx.scene.control.ButtonBar.ButtonData.YES;
 
 public class ControllerCaroBoard implements Runnable {
-
     @FXML
     private Button NewGame,exit;
     @FXML
@@ -142,8 +136,6 @@ public class ControllerCaroBoard implements Runnable {
                             Score2++;//Increase points for player2 when winning
                             lbScore2.setText(String.valueOf(Score2));
                         }
-
-
                         ButtonType buttonCancel= new ButtonType("Cancel", CANCEL_CLOSE);
                         alert.getButtonTypes().setAll(buttonCancel);
                         Optional<ButtonType> result = alert.showAndWait();
