@@ -2,6 +2,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -24,11 +26,14 @@ public class Main extends Application {
         loader.setLocation(getClass().getResource("/sample.fxml"));
         Parent parent = loader.load();
         Pane gr = new Pane();
-        gr.getChildren().add(parent);
+        gr.getChildren().addAll(parent);
         Scene scene = new Scene(gr);
+
+
         primaryStage.setTitle("GAME C-A-R-O");
         primaryStage.getIcons().add(new Image("/image/iconGame.jfif"));
         primaryStage.setScene(scene);
         primaryStage.show();
 }
+
 }

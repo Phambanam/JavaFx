@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="388.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerCaroBoard">
+<AnchorPane prefHeight="421.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerCaroBoard">
     <children>
 
         <Label layoutX="9.0" layoutY="17.0" text="Name player 1" textFill="#b55b27">
@@ -18,27 +18,37 @@
                 <Font size="14.0" />
             </font>
         </Label>
-        <Button fx:id="exit" layoutX="28.0" layoutY="281.0" mnemonicParsing="false" onAction="#CaroBoardExit" prefHeight="30.0" prefWidth="90.0" text="Exit" textFill="#252522">
+        <Button fx:id="exit" layoutX="25.0" layoutY="335.0" mnemonicParsing="false" onAction="#CaroBoardExit" prefHeight="30.0" prefWidth="90.0" text="Exit" textFill="#252522">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Label fx:id="lbName1" layoutX="9.0" layoutY="44.0" prefHeight="17.0" prefWidth="107.0" text="Name1" textFill="#cd2525">
+        <Label fx:id="lbName1" layoutX="9.0" layoutY="44.0" prefHeight="17.0" prefWidth="107.0" textFill="#cd2525">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <Label fx:id="lbName2" layoutX="9.0" layoutY="102.0" prefHeight="17.0" prefWidth="107.0" text="name2" textFill="#f20303">
+        <Label fx:id="lbName2" layoutX="9.0" layoutY="102.0" prefHeight="17.0" prefWidth="107.0" textFill="#f20303">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <ProgressBar layoutX="1.0" layoutY="181.0" prefHeight="18.0" prefWidth="119.0" progress="0.0" />
-        <Label layoutX="4.0" layoutY="143.0" prefHeight="17.0" prefWidth="113.0" text="Name player">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Label>
+      <Button fx:id="NewGame" layoutX="25.0" layoutY="299.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="30.0" prefWidth="90.0" text="New Game" />
+      <Button fx:id="start" layoutX="25.0" layoutY="261.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="30.0" prefWidth="90.0" text="Start">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="second" layoutX="9.0" layoutY="190.0" prefHeight="30.0" prefWidth="94.0" text="Timer : 30 sec">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbPlaying" layoutX="13.0" layoutY="147.0" prefHeight="46.0" prefWidth="100.0" text="lbPlaying" textFill="#141413">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
     </children>
 
 </AnchorPane>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -13,8 +11,9 @@
       <TextField fx:id="Name1" layoutX="220.0" layoutY="102.0" onAction="#CheckName1" prefHeight="25.0" prefWidth="184.0">
          <font>
             <Font size="14.0" />
-         </font></TextField>
-      <Label contentDisplay="CENTER" layoutX="168.0" layoutY="14.0" text="NAME PERSON" textFill="#7dd358">
+         </font>
+      </TextField>
+      <Label contentDisplay="CENTER" layoutX="168.0" layoutY="14.0" text="NAME PLAYER" textFill="#7dd358">
          <font>
             <Font size="39.0" />
          </font>

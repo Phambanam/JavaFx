@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controller">
-   <Button fx:id="start" layoutX="291.0" layoutY="252.0" mnemonicParsing="false" onAction="#Start" text="Start"/>
-   <TextField fx:id="Name1" layoutX="220.0" layoutY="102.0" onAction="#CheckName1" prefHeight="25.0" prefWidth="184.0">
-      <font>
-         <Font size="14.0"/>
-      </font>
-   </TextField>
-   <Label contentDisplay="CENTER" layoutX="168.0" layoutY="14.0" text="NAME PERSON" textFill="#7dd358">
-      <font>
-         <Font size="39.0"/>
-      </font>
-   </Label>
-   <Label layoutX="93.0" layoutY="107.0" text="Name Person 1" textFill="#b53c3c">
-      <font>
-         <Font size="14.0"/>
-      </font>
-   </Label>
-   <Label layoutX="93.0" layoutY="156.0" text="Name Person 2" textFill="#2b199e">
-      <font>
-         <Font size="14.0"/>
-      </font>
-   </Label>
-   <TextField fx:id="Name2" layoutX="220.0" layoutY="151.0" onAction="#CheckName2" prefHeight="25.0" prefWidth="184.0">
-      <font>
-         <Font size="14.0"/>
-      </font>
-   </TextField>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Button fx:id="start" layoutX="291.0" layoutY="252.0" mnemonicParsing="false" onAction="#Start" text="Start" />
+      <TextField fx:id="Name1" layoutX="220.0" layoutY="102.0" onAction="#CheckName1" prefHeight="25.0" prefWidth="184.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label contentDisplay="CENTER" layoutX="168.0" layoutY="14.0" text="NAME PLAYER" textFill="#7dd358">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="107.0" text="Name Person 1" textFill="#b53c3c">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="156.0" text="Name Person 2" textFill="#2b199e">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="Name2" layoutX="220.0" layoutY="151.0" onAction="#CheckName2" prefHeight="25.0" prefWidth="184.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+   </children>
 </AnchorPane>

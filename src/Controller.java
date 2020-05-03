@@ -54,8 +54,7 @@ public class Controller {
 
         gr.getChildren().addAll(parent);
         ControllerCaroBoard controller = loader.getController();
-        CaroBoard caroBoard = new CaroBoard();
-        caroBoard.caroBoard(gr,Name1.getText(),Name2.getText());
+        controller.caroBoard(gr);
         Scene scene = new Scene(gr);
 
         controller.setNamePlayer1(Name1.getText());
