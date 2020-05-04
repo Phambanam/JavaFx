@@ -11,13 +11,20 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.awt.*;
 import java.io.IOException;
+import java.util.Collection;
 import java.util.Optional;
+
 import static javafx.scene.control.ButtonBar.ButtonData.CANCEL_CLOSE;
+import static javafx.scene.control.ButtonBar.ButtonData.YES;
 
 public class ControllerCaroBoard implements Runnable {
+
     @FXML
     private Button NewGame,exit;
     @FXML
@@ -114,19 +121,47 @@ public class ControllerCaroBoard implements Runnable {
                     reset();// when going to a new one, the time is initialized to 30 s
                    if((Score1+Score2)%2 ==0) //Change players first after each game won
                    {if(k%2 == 0) {
-                        btn.setText("X");
+
+                        Image image = new Image("/image/x.png");
+                        ImageView imageView =new ImageView(image);
+                       btn.setId("x");
+                        btn.setGraphic(imageView);
+
                     }
-                    else btn.setText("O");}
+                    else {
+
+                       Image image = new Image("/image/o.png");
+                       ImageView imageView =new ImageView(image);
+                       btn.setId("o");
+                       btn.setGraphic(imageView);
+                   }}
                     else
-                   if(k%2 == 0) btn.setText("O");
-                   else btn.setText("X");
+                   {
+                       if(k%2 == 0) {
+
+                           Image image = new Image("/image/o.png");
+                           ImageView imageView =new ImageView(image);
+                           btn.setId("o");
+                           btn.setGraphic(imageView);
+
+
+                       }
+                       else {
+
+                           Image image = new Image("/image/x.png");
+                           ImageView imageView =new ImageView(image);
+                           btn.setGraphic(imageView);
+                           btn.setId("x");
+                       }
+                   }
 
                     if( Check.check(bt,btn,Controller.gr)) { //Check who has 5 pieces first will win
                         StopTimer();
+                        System.out.println("win");
                         Alert alert = new Alert(AlertType.CONFIRMATION);
                         alert.setTitle("Notify the winner");
                         alert.setHeaderText(null);
-                        if(btn.getText().equals("X")){
+                        if(btn.getId().equals("x")){
                             alert.setContentText(lbName1.getText() + " win");
                             Score1++;// Increase points for player 1 when winning
                             lbScore1.setText(String.valueOf(Score1));
@@ -136,6 +171,8 @@ public class ControllerCaroBoard implements Runnable {
                             Score2++;//Increase points for player2 when winning
                             lbScore2.setText(String.valueOf(Score2));
                         }
+
+
                         ButtonType buttonCancel= new ButtonType("Cancel", CANCEL_CLOSE);
                         alert.getButtonTypes().setAll(buttonCancel);
                         Optional<ButtonType> result = alert.showAndWait();
@@ -173,19 +210,19 @@ public class ControllerCaroBoard implements Runnable {
                         "\nis playing");
                 else  lbPlaying.setText(lbName2.getText() +"\nis playing");
                 second.setText(Second + " second");
-                if(Second == 0){ //check the winner when the time is up
+                if(Second == 0){
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Notify the winner");
-                    alert.setContentText("Do you want to play a new game ");
+                    alert.setHeaderText(null);
                     if(lbPlaying.getText().equals(lbName1.getText()))
                     {
-                        alert.setHeaderText( lbName2.getText()+ "win");
+                        alert.setContentText( lbName2.getText()+ " win");
                         Score2++;
                         lbScore2.setText(String.valueOf(Score2));
                     }
                     else
                     {
-                        alert.setHeaderText( lbName1.getText() + "win" );
+                        alert.setContentText( lbName1.getText() + " win" );
                         Score1++;
                         lbScore1.setText(String.valueOf(Score1));
                     }

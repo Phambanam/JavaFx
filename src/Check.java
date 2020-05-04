@@ -2,15 +2,20 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import org.jetbrains.annotations.NotNull;
 
+import javax.swing.text.html.ImageView;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Check {
+
     public static Boolean check(Button[][] bt, Button button, Pane gr){
         return CheckHorizontal(bt,button,gr) || CheckDiagonalRight(bt,button,gr)
                 ||CheckDiagonalLeft(bt,button,gr) || CheckVertical(bt,button,gr)  ;
     }
+
     private static Boolean CheckHorizontal(Button[][] bt, Button button, Pane gr){
         Button button1 = new Button();
         Button button2 = new Button();
@@ -22,14 +27,16 @@ public class Check {
                     int k = j;
                     int count = 0;
                     while (k > 0) {
-                        k --;
-                        if (button.getText().equals(bt[i][k].getText()))
+                         k--;
+                        if (button.getId().equals(bt[i][k].getId()))
                         {
                             count++;
                             button1 = bt[i][k];
                         }
                         else{
-                            if(count == 0) button1 = button;
+                            if(count == 0) {
+                                button1 = button;
+                            }
                             break;}
                     }
                     // kiem tra so con ben phai
@@ -37,7 +44,7 @@ public class Check {
                     k = j;
                     while (k < finalValue.btLine - 1) {
                         k ++;
-                        if (button.getText().equals(bt[i][k].getText())) {
+                        if (button.getId().equals(bt[i][k].getId())) {
                             {
                                 count1++;
                                 button2 = bt[i][k];
@@ -60,7 +67,8 @@ public class Check {
         return false;
     }
 
-    private static Boolean CheckVertical(Button[][] bt, Button button,Pane gr){
+
+    private static Boolean CheckVertical(Button[][] bt, Button button, Pane gr){
         Button button1 = new Button();
         Button button2 = new Button();
         Line line = new Line();
@@ -72,7 +80,7 @@ public class Check {
                     int count = 0;
                     while (k > 0) {
                         k --;
-                        if (button.getText().equals(bt[k][j].getText()))
+                        if (Objects.equals(button.getId(), bt[k][j].getId()))
                         {
                             count++;
                             button1 = bt[k][j];
@@ -86,7 +94,7 @@ public class Check {
                     int count1 = 0;
                     while (k < finalValue.btRow - 1) {
                         k ++;
-                        if (button.getText().equals(bt[k][j].getText())) {
+                        if (button.getId().equals(bt[k][j].getId())) {
                             {
                                 count1++;
                                 button2 = bt[k][j];
@@ -108,7 +116,8 @@ public class Check {
         return false;
 
     }
-    private static Boolean CheckDiagonalRight(Button[][] bt, Button button,Pane gr){
+
+    private static Boolean CheckDiagonalRight(Button[][] bt, Button button, Pane gr){
         Button button1 = new Button();
         Button button2 = new Button();
         Line line = new Line();
@@ -122,7 +131,7 @@ public class Check {
                     while (k > 0 && c > 0) {
                         k --;
                         c --;
-                        if (button.getText().equals(bt[c][k].getText())) {
+                        if (button.getId().equals(bt[c][k].getId())) {
                             count++;
                             button1 = bt[c][k];
                         }
@@ -138,7 +147,7 @@ public class Check {
                     while (k < finalValue.btLine - 1 && c < finalValue.btRow - 1) {
                         k ++;
                         c++;
-                        if (bt[c][k].getText().equals(button.getText())) {
+                        if (button.getId().equals(bt[c][k].getId())) {
                             {
                                 count1++;
                                 button2 = bt[c][k];
@@ -158,7 +167,7 @@ public class Check {
         }
         return false;
     }
-    private static Boolean CheckDiagonalLeft(Button[][] bt, Button button,Pane gr){
+    private static Boolean CheckDiagonalLeft(Button[][] bt, Button button, Pane gr){
         Button button1 = new Button();
         Button button2 = new Button();
         Line line = new Line();
@@ -172,7 +181,7 @@ public class Check {
                     while (k < finalValue.btLine - 1 && c > 0) {
                         k ++;
                         c --;
-                        if (button.getText().equals(bt[c][k].getText()))
+                        if (button.getId().equals(bt[c][k].getId()))
                         {
                             count++;
                             button1 = bt[c][k];
@@ -190,7 +199,7 @@ public class Check {
                     while (k >0 && c < finalValue.btRow - 1) {
                         k --;
                         c++;
-                        if (button.getText().equals(bt[c][k].getText())) {
+                        if (button.getId().equals(bt[c][k].getId())) {
                             {
                                 count1++;
                                 button2 = bt[c][k];
@@ -211,7 +220,7 @@ public class Check {
         }
         return false;
     }
-    public static void drawLine(Button button1, Button button2, Line line, Pane gr){
+    public static void drawLine( Button button1, Button button2, Line line, Pane gr){
         line.setStartX(button1.getLayoutX()+finalValue.btX/2);
         line.setEndX(button2.getLayoutX()+finalValue.btX/2);
         line.setStartY(button1.getLayoutY()+finalValue.btY/2);
@@ -219,4 +228,5 @@ public class Check {
         line.setStroke(Color.GREEN);
         gr.getChildren().add(line );
     }
+
 }
