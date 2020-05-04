@@ -112,12 +112,13 @@ public class ControllerCaroBoard implements Runnable {
                 btn.setLayoutY(oldButton.getLayoutY());
                 btn.setLayoutX(oldButton.getLayoutX());
                 btn.setMinSize(finalValue.btX,finalValue.btY);
+                btn.setId("");
                 bt[i][j] = btn;
 
                 btn.setOnAction(event -> {
                     if(!checkStart) return;
                     if(count[0] !=0) return;// After the win can not go on to the remaining cells
-                    if(!btn.getText().equals("")) return;// Check this box has a chess piece or not?
+                    if(btn.getId().equals("x") || btn.getId().equals("o") ) return;// Check this box has a chess piece or not?
                     reset();// when going to a new one, the time is initialized to 30 s
                    if((Score1+Score2)%2 ==0) //Change players first after each game won
                    {if(k%2 == 0) {

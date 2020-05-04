@@ -1,5 +1,3 @@
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class finalValue {
         public static int btX = 45;
