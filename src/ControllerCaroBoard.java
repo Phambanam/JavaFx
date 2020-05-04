@@ -124,7 +124,7 @@ public class ControllerCaroBoard implements Runnable {
 
                         Image image = new Image("/image/x.png");
                         ImageView imageView =new ImageView(image);
-                       btn.setId("x");
+                        btn.setId("x");
                         btn.setGraphic(imageView);
 
                     }
@@ -141,6 +141,7 @@ public class ControllerCaroBoard implements Runnable {
 
                            Image image = new Image("/image/o.png");
                            ImageView imageView =new ImageView(image);
+
                            btn.setId("o");
                            btn.setGraphic(imageView);
 
@@ -151,6 +152,7 @@ public class ControllerCaroBoard implements Runnable {
                            Image image = new Image("/image/x.png");
                            ImageView imageView =new ImageView(image);
                            btn.setGraphic(imageView);
+
                            btn.setId("x");
                        }
                    }
