@@ -26,14 +26,11 @@ import static javafx.scene.control.ButtonBar.ButtonData.YES;
 public class ControllerCaroBoard implements Runnable {
 
     @FXML
-    private Button NewGame,exit;
+    private Button NewGame,exit,start;
     @FXML
     private Label lbName1,lbName2,lbPlaying;
     @FXML
     private Label second,lbScore1,lbScore2;
-
-
-    private Button start;
     private static int k = 0;
     private static Boolean checkNewGame = false;
     private static Button[][] bt = new Button[finalValue.btRow][finalValue.btLine];
@@ -66,10 +63,11 @@ public class ControllerCaroBoard implements Runnable {
 
     public void reset(){
         Second = 30;
-        second.setText(Second + " second");
+        second.setText("Timer " +Second + " second");
     }
 
     public void CaroBoardExit(ActionEvent event) throws IOException {
+        Controller.gr = new Pane();
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
         primaryStage.setResizable(false);
@@ -94,6 +92,7 @@ public class ControllerCaroBoard implements Runnable {
             alert.showAndWait();
             return;
         }
+        StartGame(event);
         caroBoard();
         checkNewGame = false;
     }
@@ -212,7 +211,7 @@ public class ControllerCaroBoard implements Runnable {
                 if(k%2==0) lbPlaying.setText(lbName1.getText() +
                         "\nis playing");
                 else  lbPlaying.setText(lbName2.getText() +"\nis playing");
-                second.setText(Second + " second");
+                second.setText("Timer " +Second + " second");
                 if(Second == 0){
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Notify the winner");

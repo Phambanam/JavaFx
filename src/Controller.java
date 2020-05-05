@@ -54,15 +54,12 @@ public class Controller {
         stage.setResizable(false);
         loader.setLocation(getClass().getResource("CaroBoard.fxml"));
         Parent parent = loader.load();
-
         stage.setTitle("GAME C-A-R-O");
         stage.getIcons().add(new Image("/image/iconGame.jfif"));
-
+        Scene scene = new Scene(gr);
         gr.getChildren().addAll(parent);
         ControllerCaroBoard controller = loader.getController();
         controller.caroBoard();
-        Scene scene = new Scene(gr);
-
         controller.setNamePlayer(Name1.getText(),Name2.getText());
         controller.SetScore();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
