@@ -25,10 +25,7 @@ public class Controller {
     public TextField Name1,Name2;
     @FXML
     private Button start;
-    @FXML
-    private Button btExit;
-    @FXML
-    private Button btTutorial;
+
     public static Pane gr = new Pane();
     public void CheckName1(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -48,7 +45,7 @@ public class Controller {
         else Name2.setOnAction(event1 -> start.requestFocus());
     }
 
-    public  void Start(ActionEvent event) throws IOException {
+    public  void btStart(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
         stage.setResizable(false);
@@ -59,7 +56,7 @@ public class Controller {
         Scene scene = new Scene(gr);
         gr.getChildren().addAll(parent);
         ControllerCaroBoard controller = loader.getController();
-        controller.caroBoard();
+        new draw().caroBoard();
         controller.setNamePlayer(Name1.getText(),Name2.getText());
         controller.SetScore();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

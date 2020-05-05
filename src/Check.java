@@ -106,7 +106,6 @@ public class Check {
                     }
                     if(count + count1 >= 4){
                         drawLine(button1,button2,line,gr);
-
                         return true;
                     }
                 }

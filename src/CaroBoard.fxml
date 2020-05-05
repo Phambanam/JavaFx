@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="565.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerCaroBoard">
-    <children>
+<AnchorPane prefHeight="565.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ControllerCaroBoard">
 
-        <Label layoutX="13.0" layoutY="38.0" text="Name player 1" textFill="#b55b27">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Label layoutX="12.0" layoutY="100.0" text="Name player  2" textFill="#a6a82c">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Button fx:id="exit" layoutX="13.0" layoutY="446.0" mnemonicParsing="false" onAction="#CaroBoardExit" prefHeight="30.0" prefWidth="90.0" text="Exit" textFill="#252522">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Button>
-        <Label fx:id="lbName1" layoutX="7.0" layoutY="65.0" prefHeight="17.0" prefWidth="107.0" textFill="#cd2525">
-            <font>
-                <Font size="16.0" />
-            </font>
-        </Label>
-        <Label fx:id="lbName2" layoutX="5.0" layoutY="128.0" prefHeight="17.0" prefWidth="107.0" textFill="#f20303">
-            <font>
-                <Font size="16.0" />
-            </font>
-        </Label>
-        <Button fx:id="NewGame" layoutX="13.0" layoutY="401.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="30.0" prefWidth="90.0" text="New Game" />
-        <Button fx:id="start" layoutX="13.0" layoutY="358.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="30.0" prefWidth="90.0" text="Start">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Button>
-        <Label fx:id="second" layoutX="13.0" layoutY="283.0" prefHeight="30.0" prefWidth="94.0" text="Timer : 30 sec">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Label fx:id="lbPlaying" layoutX="14.0" layoutY="203.0" prefHeight="46.0" prefWidth="119.0" text="Player is playing" textFill="#141413">
-            <font>
-                <Font size="16.0" />
-            </font>
-        </Label>
-        <Label layoutX="25.0" layoutY="164.0" text="Score">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Label fx:id="lbScore1" alignment="CENTER" layoutX="68.0" layoutY="164.0" textFill="#cd2727">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-        <Label alignment="CENTER" layoutX="80.0" layoutY="162.0" prefHeight="17.0" prefWidth="15.0" text=":" />
-        <Label fx:id="lbScore2" layoutX="100.0" layoutY="164.0" textFill="#b2c992">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </Label>
-      <MenuButton layoutY="2.0" mnemonicParsing="false" text="MenuButton">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </MenuButton>
-    </children>
-
+    <Label layoutX="13.0" layoutY="38.0" text="Name player 1" textFill="#b55b27">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label layoutX="12.0" layoutY="100.0" text="Name player  2" textFill="#a6a82c">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Button fx:id="exit" layoutX="13.0" layoutY="446.0" mnemonicParsing="false" onAction="#CaroBoardExit"
+            prefHeight="30.0" prefWidth="90.0" text="Exit" textFill="#252522">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Label fx:id="lbName1" layoutX="7.0" layoutY="65.0" prefHeight="17.0" prefWidth="107.0" textFill="#cd2525">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </Label>
+    <Label fx:id="lbName2" layoutX="5.0" layoutY="128.0" prefHeight="17.0" prefWidth="107.0" textFill="#f20303">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </Label>
+    <Button fx:id="NewGame" layoutX="13.0" layoutY="401.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="30.0"
+            prefWidth="90.0" text="New Game"/>
+    <Button fx:id="start" layoutX="13.0" layoutY="358.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="30.0"
+            prefWidth="90.0" text="Start" textFill="#252424">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Button>
+    <Label fx:id="second" layoutX="13.0" layoutY="283.0" prefHeight="30.0" prefWidth="94.0" text="30 second">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label fx:id="lbPlaying" layoutX="14.0" layoutY="203.0" prefHeight="46.0" prefWidth="119.0" text="Player is playing"
+           textFill="#141413">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </Label>
+    <Label layoutX="25.0" layoutY="164.0" text="Score">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label fx:id="lbScore1" alignment="CENTER" layoutX="68.0" layoutY="164.0" textFill="#cd2727">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label alignment="CENTER" layoutX="80.0" layoutY="162.0" prefHeight="17.0" prefWidth="15.0" text=":"/>
+    <Label fx:id="lbScore2" layoutX="100.0" layoutY="164.0" textFill="#b2c992">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </Label>
+    <Label layoutX="13.0" layoutY="253.0" prefHeight="30.0" prefWidth="107.0" text="Time thinking :" textFill="#19dd22">
+        <font>
+          <Font size="14.0"/>
+        </font>
+    </Label>
 </AnchorPane>
