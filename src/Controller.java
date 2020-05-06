@@ -46,6 +46,8 @@ public class Controller {
     }
 
     public  void btStart(ActionEvent event) throws IOException {
+        gr = new Pane();
+        Scene scene = new Scene(gr);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
         stage.setResizable(false);
@@ -53,12 +55,13 @@ public class Controller {
         Parent parent = loader.load();
         stage.setTitle("GAME C-A-R-O");
         stage.getIcons().add(new Image("/image/iconGame.jfif"));
-        Scene scene = new Scene(gr);
+
         gr.getChildren().addAll(parent);
         ControllerCaroBoard controller = loader.getController();
         new draw().caroBoard();
         controller.setNamePlayer(Name1.getText(),Name2.getText());
         controller.SetScore();
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         if(Name1.getText().isEmpty() || Name2.getText().isEmpty() ) {
             alert.setContentText(" Retype the player name ");

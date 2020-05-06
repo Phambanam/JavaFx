@@ -2,7 +2,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.text.html.ImageView;
 import java.util.ArrayList;
