@@ -66,7 +66,6 @@ public class ControllerCaroBoard extends Controller implements Runnable {
         new  Main().start(primaryStage);
     }
     public void NewGame(ActionEvent event) {
-         k =0 ;
         if (!checkNewGame) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
@@ -75,6 +74,7 @@ public class ControllerCaroBoard extends Controller implements Runnable {
             alert.showAndWait();
             return;
         }
+        k =0 ;
         checkBtStart = 0;
         StartGame(event);
         new draw().caroBoard();

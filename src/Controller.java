@@ -26,7 +26,8 @@ public class Controller {
     @FXML
     private Button start;
 
-    public static Pane gr = new Pane();
+    public static Pane gr ;
+
     public void CheckName1(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         if(Name1.getText().trim().isEmpty() ) {
