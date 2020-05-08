@@ -3,7 +3,7 @@ import javafx.scene.control.Button;
 public class draw  extends ControllerCaroBoard{
         public  void caroBoard() {
             Button oldButton = new Button();
-            oldButton.setLayoutX(150);
+            oldButton.setLayoutX(205);
             oldButton.setLayoutY(0);
             oldButton.setPrefSize(0,0);
             for(int i = 0; i < finalValue.btRow; i++ ){
@@ -12,6 +12,7 @@ public class draw  extends ControllerCaroBoard{
                     btn.setLayoutY(oldButton.getLayoutY());
                     btn.setLayoutX(oldButton.getLayoutX());
                     btn.setMinSize(finalValue.btX,finalValue.btY);
+                    btn.setStyle("-fx-background-color: White;-fx-border-color: black;");
                     btn.setId("");
                     bt[i][j] = btn;
                     Controller.gr.getChildren().addAll(btn);
@@ -21,7 +22,7 @@ public class draw  extends ControllerCaroBoard{
                     oldButton = btn1;
                 }
                 oldButton.setLayoutY(oldButton.getLayoutY()+finalValue.btY);
-                oldButton.setLayoutX(150);
+                oldButton.setLayoutX(205);
             }
         }
 }

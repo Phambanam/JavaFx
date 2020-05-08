@@ -26,7 +26,11 @@ public class Main extends Application {
         loader.setLocation(getClass().getResource("/sample.fxml"));
         Parent parent = loader.load();
         Pane gr = new Pane();
-        gr.getChildren().addAll(parent);
+        Image image = new Image("/image/Background1.jpeg");
+        ImageView imageView =new ImageView(image);
+        imageView.setFitHeight(400);
+        imageView.setFitWidth(600);
+        gr.getChildren().addAll(imageView,parent);
         Scene scene = new Scene(gr);
         primaryStage.setTitle("GAME C-A-R-O");
         primaryStage.getIcons().add(new Image("/image/iconGame.jfif"));

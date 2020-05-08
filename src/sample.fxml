@@ -5,35 +5,44 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-ima: o.png;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Button fx:id="start" layoutX="220.0" layoutY="252.0" mnemonicParsing="false" onAction="#btStart" text="Start" />
+      <Button fx:id="start" layoutX="179.0" layoutY="252.0" mnemonicParsing="false" onAction="#btStart" prefHeight="34.0" prefWidth="106.0" style="-fx-background-color: Pink;" text="Start" textFill="#eb0808">
+         <font>
+            <Font name="Elephant Italic" size="16.0" />
+         </font></Button>
       <TextField fx:id="Name1" layoutX="220.0" layoutY="102.0" onAction="#CheckName1" prefHeight="25.0" prefWidth="184.0">
          <font>
-            <Font size="14.0" />
+            <Font name="Elephant Italic" size="16.0" />
          </font>
       </TextField>
-      <Label contentDisplay="CENTER" layoutX="168.0" layoutY="14.0" text="NAME PLAYER" textFill="#7dd358">
+      <Label contentDisplay="CENTER" layoutX="98.0" layoutY="24.0" text="NAME PLAYER" textFill="#7dd358">
          <font>
-            <Font size="39.0" />
+            <Font name="Elephant Italic" size="40.0" />
          </font>
       </Label>
       <Label layoutX="93.0" layoutY="107.0" text="Name Person 1" textFill="#b53c3c">
          <font>
-            <Font size="14.0" />
+            <Font name="Elephant Italic" size="16.0" />
          </font>
       </Label>
       <Label layoutX="93.0" layoutY="156.0" text="Name Person 2" textFill="#2b199e">
          <font>
-            <Font size="14.0" />
+            <Font name="Elephant Italic" size="16.0" />
          </font>
       </Label>
       <TextField fx:id="Name2" layoutX="220.0" layoutY="151.0" onAction="#CheckName2" prefHeight="25.0" prefWidth="184.0">
          <font>
-            <Font size="14.0" />
+            <Font name="Elephant Italic" size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="btExit" layoutX="340.0" layoutY="252.0" mnemonicParsing="false" onAction="#ExitGame" prefHeight="25.0" prefWidth="47.0" text="Exit" />
-      <Button fx:id="btTutorial" layoutX="274.0" layoutY="252.0" mnemonicParsing="false" onAction="#TutorialPlayGame" text="Tutorial" />
+      <Button fx:id="btExit" layoutX="416.0" layoutY="252.0" mnemonicParsing="false" onAction="#ExitGame" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: pink;" text="Exit">
+         <font>
+            <Font name="Elephant Italic" size="16.0" />
+         </font></Button>
+      <Button fx:id="btTutorial" layoutX="300.0" layoutY="252.0" mnemonicParsing="false" onAction="#TutorialPlayGame" prefHeight="34.0" prefWidth="106.0" style="-fx-background-color: Pink;" text="Tutorial" textFill="#3abf1f">
+         <font>
+            <Font name="Elephant Italic" size="16.0" />
+         </font></Button>
    </children>
 </AnchorPane>

@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -21,11 +21,13 @@ import static javafx.scene.control.ButtonBar.ButtonData.CANCEL_CLOSE;
 
 public class ControllerCaroBoard extends Controller implements Runnable {
 
-    public Button NewGame;
+    @FXML
+    private Pane ControllerPane;
     @FXML
     private Label lbName1,lbName2,lbPlaying;
     @FXML
     private Label second,lbScore1,lbScore2;
+    public Button NewGame;
     public static int k = 0;
     public static Boolean checkNewGame = false;
     public static Button[][] bt = new Button[finalValue.btRow][finalValue.btLine];
@@ -33,16 +35,29 @@ public class ControllerCaroBoard extends Controller implements Runnable {
     public static int Second = 30;
     public static Boolean RUN_TIMER = false;
     public static int Score1 = 0,Score2 = 0;
+    int checkBtStart = 0;
+    public  void SetPaneController(Scene scene){
+        ControllerPane.setPrefHeight(finalValue.btLine*45);
+//        Image image = new Image("/image/Background1.jpeg");
+//        ImageView imageView =new ImageView(image);
+//        imageView.setFitHeight(ControllerPane.getPrefHeight());
+//        imageView.setFitWidth(ControllerPane.getPrefWidth());
+//        ControllerPane.getChildren().add(imageView);
 
+        ControllerPane.setStyle("-fx-background-color: White;-fx-border-color: blue;");
+
+
+    }
     public  void  SetScore(){
         lbScore1.setText("0");
         lbScore2.setText("0");
     }
+
     public void setNamePlayer(String name1, String name2) {
         lbName1.setText(name1);
         lbName2.setText(name2);
     }
-    int checkBtStart = 0;
+
     public void StartGame(ActionEvent event) {
         handlePiece();
         RUN_TIMER = true;
@@ -53,18 +68,22 @@ public class ControllerCaroBoard extends Controller implements Runnable {
         }else  return;
         checkBtStart++;
     }
+
     public  void StopTimer(){
         RUN_TIMER = false;
     }
+
     public void resetTimer(){
         Second = 30;
         second.setText(Second + " second");
     }
+
     public void CaroBoardExit(ActionEvent event) throws Exception {
          Controller.gr = new Pane();
         Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         new  Main().start(primaryStage);
     }
+
     public void NewGame(ActionEvent event) {
         if (!checkNewGame) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -81,6 +100,7 @@ public class ControllerCaroBoard extends Controller implements Runnable {
         handlePiece();
         checkNewGame = false;
     }
+
     @Override
     public void run() {
         while(RUN_TIMER && Second > 0) {

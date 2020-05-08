@@ -48,6 +48,7 @@ public class Controller {
 
     public  void btStart(ActionEvent event) throws IOException {
         gr = new Pane();
+        gr.setStyle("-fx-background-color: Gainsboro;-fx-border-color: blue;");
         Scene scene = new Scene(gr);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
@@ -62,7 +63,7 @@ public class Controller {
         new draw().caroBoard();
         controller.setNamePlayer(Name1.getText(),Name2.getText());
         controller.SetScore();
-
+        controller.SetPaneController(scene);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         if(Name1.getText().isEmpty() || Name2.getText().isEmpty() ) {
             alert.setContentText(" Retype the player name ");
