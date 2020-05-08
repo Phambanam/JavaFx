@@ -105,11 +105,28 @@ public class ControllerCaroBoard extends Controller implements Runnable {
     public void run() {
         while(RUN_TIMER && Second > 0) {
             Second--;
+
             Platform.runLater(() -> {
-                if(k%2==0) lbPlaying.setText(lbName1.getText() +
-                        "\nis playing");
-                else  lbPlaying.setText(lbName2.getText() +"\nis playing");
+                //write who is playing in lbPlaying
+                if(Second %2 == 1){
+                    lbPlaying.setText("");
+                }
+                else  if((Score1+Score2)%2 ==0)
+                { if(k%2==0) {lbPlaying.setText(lbName1.getText().toUpperCase() +"'S" +"\nTURN");
+                    lbPlaying.setStyle("-fx-text-fill: Red;");}
+                else {
+                    lbPlaying.setText(lbName2.getText().toUpperCase() +"'S"+"\nTURN");
+                    lbPlaying.setStyle("-fx-text-fill: Green;");
+                }} else
+                if(k%2==1) {lbPlaying.setText(lbName1.getText().toUpperCase() +"'S" +"\nTURN");
+                    lbPlaying.setStyle("-fx-text-fill: Red;");}
+                else {
+                    lbPlaying.setText(lbName2.getText().toUpperCase() +"'S"+"\nTURN");
+                    lbPlaying.setStyle("-fx-text-fill: Green;");
+                }
+                //write timer thinking
                 second.setText(Second + " second");
+                //write win
                 if(Second == 0){
                     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                     alert.setTitle("Notify the winner");
@@ -157,7 +174,6 @@ public class ControllerCaroBoard extends Controller implements Runnable {
                     resetTimer();// when going to a new one, the time is initialized to 30 s
                     if((Score1+Score2)%2 ==0) //Change players first after each game won
                     {if(k%2 == 0) {
-
                         Image image = new Image("/image/x.png");
                         ImageView imageView =new ImageView(image);
                         bt[finalI][finalJ].setId("x");

@@ -5,7 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-ima: o.png;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Button fx:id="start" layoutX="179.0" layoutY="252.0" mnemonicParsing="false" onAction="#btStart" prefHeight="34.0" prefWidth="106.0" style="-fx-background-color: Pink;" text="Start" textFill="#eb0808">
          <font>
@@ -21,12 +21,12 @@
             <Font name="Elephant Italic" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="107.0" text="Name Person 1" textFill="#b53c3c">
+      <Label layoutX="93.0" layoutY="107.0" text="Name player1" textFill="#b53c3c">
          <font>
             <Font name="Elephant Italic" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="156.0" text="Name Person 2" textFill="#2b199e">
+      <Label layoutX="93.0" layoutY="156.0" text="Name player2" textFill="#2b199e">
          <font>
             <Font name="Elephant Italic" size="16.0" />
          </font>

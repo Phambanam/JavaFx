@@ -51,7 +51,7 @@
                      <Font name="Bauhaus 93" size="20.0" />
                  </font>
              </Label>
-             <Label fx:id="lbPlaying" layoutX="30.0" layoutY="197.0" prefHeight="46.0" prefWidth="119.0" text="Player is playing" textFill="#141413">
+             <Label fx:id="lbPlaying" layoutX="37.0" layoutY="197.0" prefHeight="46.0" prefWidth="134.0" text="Player is playing" textAlignment="CENTER" textFill="#141413">
                  <font>
                      <Font name="Bauhaus 93" size="16.0" />
                  </font>
@@ -61,7 +61,7 @@
                    <Font name="Bauhaus 93" size="16.0" />
                  </font>
              </Label>
-             <Label fx:id="second" layoutX="32.0" layoutY="286.0" prefHeight="30.0" prefWidth="94.0" text="30 second">
+             <Label fx:id="second" layoutX="38.0" layoutY="271.0" prefHeight="30.0" prefWidth="94.0" text="30 second">
                  <font>
                      <Font name="Bauhaus 93" size="16.0" />
                  </font>
