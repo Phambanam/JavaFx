@@ -22,28 +22,30 @@ import java.io.InputStream;
 
 public class Controller {
     @FXML
-    public TextField Name1,Name2;
+    public TextField name1,name2;
     @FXML
     private Button start;
 
     public static Pane gr ;
 
-    public void CheckName1(ActionEvent event) {
+    public void checkName1(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        if(Name1.getText().trim().isEmpty() ) {
+        if(name1.getText().trim().isEmpty() ) {
             alert.setContentText(" Retype the player1 name ");
             alert.show();
         }
-        else Name1.setOnAction(event1 -> Name2.requestFocus());
+        else name1.setOnAction(event1 -> name2.requestFocus());
     }
 
-    public  void CheckName2(ActionEvent event){
+    public  void checkName2(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        if(Name2.getText().trim().isEmpty() ) {
+        if(name2.getText().trim().isEmpty() ) {
             alert.setContentText(" Retype the player2 name ");
             alert.show();
         }
-        else Name2.setOnAction(event1 -> start.requestFocus());
+        else {
+            name2.setOnAction(event1 -> start.requestFocus());
+        }
     }
 
     public  void btStart(ActionEvent event) throws IOException {
@@ -55,27 +57,25 @@ public class Controller {
         stage.setResizable(false);
         loader.setLocation(getClass().getResource("CaroBoard.fxml"));
         Parent parent = loader.load();
-        stage.setTitle("GAME C-A-R-O");
-        stage.getIcons().add(new Image("/image/iconGame.jfif"));
-
         gr.getChildren().addAll(parent);
         ControllerCaroBoard controller = loader.getController();
         new draw().caroBoard();
-        controller.setNamePlayer(Name1.getText(),Name2.getText());
-        controller.SetScore();
-        controller.SetPaneController(scene);
+        controller.setPaneNewGame(scene,name1.getText(),name2.getText());
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        if(Name1.getText().isEmpty() || Name2.getText().isEmpty() ) {
+        if(name1.getText().isEmpty() || name2.getText().isEmpty() ) {
             alert.setContentText(" Retype the player name ");
             alert.show();
         } else  stage.setScene(scene);
+        stage.setTitle("GAME C-A-R-O");
+        stage.getIcons().add(new Image("/image/iconGame.jfif"));
+
     }
 
-    public void ExitGame(ActionEvent event){
+    public void exitGame(ActionEvent event){
         System.exit(0);
     }
 
-    public void TutorialPlayGame(ActionEvent event){
+    public void tutorialPlayGame(ActionEvent event){
         Alert alert = new Alert( AlertType.INFORMATION);
         alert.setTitle(" instructions for playing caro games");
         alert.setHeaderText(null);

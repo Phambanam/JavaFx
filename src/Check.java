@@ -3,14 +3,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
-import javax.swing.text.html.ImageView;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Check {
 
-    public static Boolean check(Button[][] bt, Button button, Pane gr){
+    public static   Boolean check(Button[][] bt, Button button, Pane gr){
         return CheckHorizontal(bt,button,gr) || CheckDiagonalRight(bt,button,gr)
                 ||CheckDiagonalLeft(bt,button,gr) || CheckVertical(bt,button,gr)  ;
     }
@@ -19,8 +16,8 @@ public class Check {
         Button button1 = new Button();
         Button button2 = new Button();
         Line line = new Line();
-        for(int i = 0; i < finalValue.btRow; i++ ) {
-            for (int j = 0; j < finalValue.btLine; j++) {
+        for(int i = 0; i < FinalValue.btRow; i++ ) {
+            for (int j = 0; j < FinalValue.btLine; j++) {
                 if (bt[i][j] == button)
                 {    //kiem tra so con ben trai
                     int k = j;
@@ -41,7 +38,7 @@ public class Check {
                     // kiem tra so con ben phai
                     int count1 = 0;
                     k = j;
-                    while (k < finalValue.btLine - 1) {
+                    while (k < FinalValue.btLine - 1) {
                         k ++;
                         if (button.getId().equals(bt[i][k].getId())) {
                             {
@@ -71,8 +68,8 @@ public class Check {
         Button button1 = new Button();
         Button button2 = new Button();
         Line line = new Line();
-        for(int i = 0; i < finalValue.btRow; i++ ) {
-            for (int j = 0; j < finalValue.btLine; j++) {
+        for(int i = 0; i < FinalValue.btRow; i++ ) {
+            for (int j = 0; j < FinalValue.btLine; j++) {
                 if (bt[i][j] == button)
                 {    //kiem tra doc tren
                     int k = i;
@@ -91,7 +88,7 @@ public class Check {
                     // kiem tra doc duoi
                     k = i;
                     int count1 = 0;
-                    while (k < finalValue.btRow - 1) {
+                    while (k < FinalValue.btRow - 1) {
                         k ++;
                         if (button.getId().equals(bt[k][j].getId())) {
                             {
@@ -119,8 +116,8 @@ public class Check {
         Button button1 = new Button();
         Button button2 = new Button();
         Line line = new Line();
-        for(int i = 0; i < finalValue.btRow; i++ ) {
-            for (int j = 0; j < finalValue.btLine; j++) {
+        for(int i = 0; i < FinalValue.btRow; i++ ) {
+            for (int j = 0; j < FinalValue.btLine; j++) {
                 if (bt[i][j] == button)
                 {    //kiem tra cheo trai tren
                     int k = j;
@@ -142,7 +139,7 @@ public class Check {
                     k = j;
                     c = i;
                     int count1 = 0;
-                    while (k < finalValue.btLine - 1 && c < finalValue.btRow - 1) {
+                    while (k < FinalValue.btLine - 1 && c < FinalValue.btRow - 1) {
                         k ++;
                         c++;
                         if (button.getId().equals(bt[c][k].getId())) {
@@ -169,14 +166,14 @@ public class Check {
         Button button1 = new Button();
         Button button2 = new Button();
         Line line = new Line();
-        for(int i = 0; i < finalValue.btRow; i++ ) {
-            for (int j = 0; j < finalValue.btLine; j++) {
+        for(int i = 0; i < FinalValue.btRow; i++ ) {
+            for (int j = 0; j < FinalValue.btLine; j++) {
                 if (bt[i][j] == button)
                 {    //kiem tra cheo phai tren
                     int k = j;
                     int c = i;
                     int count = 0;
-                    while (k < finalValue.btLine - 1 && c > 0) {
+                    while (k < FinalValue.btLine - 1 && c > 0) {
                         k ++;
                         c --;
                         if (button.getId().equals(bt[c][k].getId()))
@@ -194,7 +191,7 @@ public class Check {
                     k = j;
                     c = i;
                     int count1 = 0;
-                    while (k >0 && c < finalValue.btRow - 1) {
+                    while (k >0 && c < FinalValue.btRow - 1) {
                         k --;
                         c++;
                         if (button.getId().equals(bt[c][k].getId())) {
@@ -219,10 +216,10 @@ public class Check {
         return false;
     }
     public static void drawLine( Button button1, Button button2, Line line, Pane gr){
-        line.setStartX(button1.getLayoutX()+finalValue.btX/2);
-        line.setEndX(button2.getLayoutX()+finalValue.btX/2);
-        line.setStartY(button1.getLayoutY()+finalValue.btY/2);
-        line.setEndY(button2.getLayoutY()+finalValue.btY/2);
+        line.setStartX(button1.getLayoutX()+ FinalValue.btX/2);
+        line.setEndX(button2.getLayoutX()+ FinalValue.btX/2);
+        line.setStartY(button1.getLayoutY()+ FinalValue.btY/2);
+        line.setEndY(button2.getLayoutY()+ FinalValue.btY/2);
         line.setStroke(Color.GREEN);
         gr.getChildren().add(line );
     }

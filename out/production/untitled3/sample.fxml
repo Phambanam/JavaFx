@@ -11,12 +11,12 @@
          <font>
             <Font name="Elephant Italic" size="16.0" />
          </font></Button>
-      <TextField fx:id="Name1" layoutX="220.0" layoutY="102.0" onAction="#CheckName1" prefHeight="25.0" prefWidth="184.0">
+      <TextField fx:id="name1" layoutX="220.0" layoutY="102.0" onAction="#checkName1" prefHeight="25.0" prefWidth="184.0">
          <font>
             <Font name="Elephant Italic" size="16.0" />
          </font>
       </TextField>
-      <Label contentDisplay="CENTER" layoutX="98.0" layoutY="24.0" text="NAME PLAYER" textFill="#7dd358">
+      <Label contentDisplay="CENTER" layoutX="87.0" layoutY="22.0" text="NAME PLAYER" textFill="#7dd358">
          <font>
             <Font name="Elephant Italic" size="40.0" />
          </font>
@@ -31,16 +31,16 @@
             <Font name="Elephant Italic" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="Name2" layoutX="220.0" layoutY="151.0" onAction="#CheckName2" prefHeight="25.0" prefWidth="184.0">
+      <TextField fx:id="name2" layoutX="221.0" layoutY="151.0" onAction="#checkName2" prefHeight="25.0" prefWidth="184.0">
          <font>
             <Font name="Elephant Italic" size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="btExit" layoutX="416.0" layoutY="252.0" mnemonicParsing="false" onAction="#ExitGame" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: pink;" text="Exit">
+      <Button fx:id="btExit" layoutX="416.0" layoutY="252.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: pink;" text="Exit">
          <font>
             <Font name="Elephant Italic" size="16.0" />
          </font></Button>
-      <Button fx:id="btTutorial" layoutX="300.0" layoutY="252.0" mnemonicParsing="false" onAction="#TutorialPlayGame" prefHeight="34.0" prefWidth="106.0" style="-fx-background-color: Pink;" text="Tutorial" textFill="#3abf1f">
+      <Button fx:id="btTutorial" layoutX="300.0" layoutY="252.0" mnemonicParsing="false" onAction="#tutorialPlayGame" prefHeight="34.0" prefWidth="106.0" style="-fx-background-color: Pink;" text="Tutorial" textFill="#3abf1f">
          <font>
             <Font name="Elephant Italic" size="16.0" />
          </font></Button>

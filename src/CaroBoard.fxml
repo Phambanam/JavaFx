@@ -66,17 +66,17 @@
                      <Font name="Bauhaus 93" size="16.0" />
                  </font>
              </Label>
-             <Button fx:id="start" layoutX="47.0" layoutY="356.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: YellowGreen;" text="Start" textFill="#1a1b1a">
+             <Button fx:id="start" layoutX="47.0" layoutY="356.0" mnemonicParsing="false" onAction="#startGame" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: YellowGreen;" text="Start" textFill="#1a1b1a">
                  <font>
                      <Font name="Bauhaus 93" size="14.0" />
                  </font>
              </Button>
-             <Button fx:id="NewGame" layoutX="47.0" layoutY="395.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: blue;" text="New Game" textFill="#f01313">
+             <Button fx:id="NewGame" layoutX="47.0" layoutY="395.0" mnemonicParsing="false" onAction="#newGame" prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: blue;" text="New Game" textFill="#f01313">
                <font>
                   <Font name="Bauhaus 93" size="16.0" />
                </font>
             </Button>
-             <Button fx:id="exit" layoutX="47.0" layoutY="432.0" mnemonicParsing="false" onAction="#CaroBoardExit" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: red;" text="Exit" textFill="#252522">
+             <Button fx:id="exit" layoutX="47.0" layoutY="432.0" mnemonicParsing="false" onAction="#caroBoardExit" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: red;" text="Exit" textFill="#252522">
                  <font>
                      <Font name="Bauhaus 93" size="16.0" />
                  </font>
