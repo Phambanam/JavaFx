@@ -25,8 +25,8 @@ public class ControllerCaroBoard implements Runnable {
     private int k = 0;
     private Boolean checkNewGame = false;
     private final Button[][] bt = Draw.bt;
-    private int secondPlaying = 30;
-    private Boolean blRUN_TIMER = false;
+    private int secondPlaying ;
+    private Boolean blRUN_TIMER = true;
     private int score1 = 0, score2 = 0;
     private int checkBtStart = 0;
     private int count = 0;
@@ -40,8 +40,7 @@ public class ControllerCaroBoard implements Runnable {
 
     public void startGame(ActionEvent event) {
         handlePiece();
-        blRUN_TIMER = true;
-        if (checkBtStart == 0) {
+        if (checkBtStart == 0 &&  blRUN_TIMER == true) {
             new Thread(this).start();
         } else return;
         checkBtStart++;
@@ -125,6 +124,7 @@ public class ControllerCaroBoard implements Runnable {
 
     @Override
     public void run() {
+        secondPlaying = 30;
         while (blRUN_TIMER && secondPlaying > 0) {
             secondPlaying--;
 
