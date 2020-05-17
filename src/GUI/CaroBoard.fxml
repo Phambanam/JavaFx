@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="563.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Model.ControllerCaroBoard">
+    <children>
+        <Pane fx:id="ControllerPane" prefHeight="571.0" prefWidth="200.0">
+            <children>
+
+                <Label layoutX="34.0" layoutY="27.0" text="Name player 1" textFill="#b55b27">
+                    <font>
+                        <Font name="Bauhaus 93" size="14.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="lbName1" layoutX="42.0" layoutY="61.0" prefHeight="17.0" prefWidth="107.0"
+                       textFill="#cd2525">
+                    <font>
+                        <Font name="Bauhaus 93" size="16.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="32.0" layoutY="87.0" text="Name player  2" textFill="#a6a82c">
+                    <font>
+                        <Font name="Bauhaus 93" size="14.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="lbName2" layoutX="28.0" layoutY="118.0" prefHeight="17.0" prefWidth="107.0"
+                       textFill="#65833e">
+                    <font>
+                        <Font name="Bauhaus 93" size="16.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="38.0" layoutY="166.0" prefHeight="20.0" prefWidth="45.0" text="Score">
+                    <font>
+                        <Font name="Bauhaus 93" size="18.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="lbScore1" alignment="CENTER" layoutX="85.0" layoutY="167.0" textFill="#cd2727">
+                    <font>
+                        <Font name="Bauhaus 93" size="20.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="97.0" layoutY="165.0" prefHeight="17.0" prefWidth="15.0" text=":">
+                    <font>
+                        <Font name="Bauhaus 93" size="20.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="lbScore2" layoutX="117.0" layoutY="167.0" textFill="#b2c992">
+                    <font>
+                        <Font name="Bauhaus 93" size="20.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="lbPlaying" layoutX="37.0" layoutY="197.0" prefHeight="46.0" prefWidth="134.0"
+                       text="Player is playing" textAlignment="CENTER" textFill="#141413">
+                    <font>
+                        <Font name="Bauhaus 93" size="16.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="28.0" layoutY="243.0" prefHeight="30.0" prefWidth="107.0" text="Time thinking :"
+                       textFill="#19dd22">
+                    <font>
+                        <Font name="Bauhaus 93" size="16.0"/>
+                    </font>
+                </Label>
+                <Label fx:id="second" layoutX="38.0" layoutY="271.0" prefHeight="30.0" prefWidth="94.0"
+                       text="30 second">
+                    <font>
+                        <Font name="Bauhaus 93" size="16.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="start" layoutX="47.0" layoutY="356.0" mnemonicParsing="false" onAction="#startGame"
+                        prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: YellowGreen;" text="Start"
+                        textFill="#1a1b1a">
+                    <font>
+                        <Font name="Bauhaus 93" size="14.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="NewGame" layoutX="47.0" layoutY="395.0" mnemonicParsing="false" onAction="#newGame"
+                        prefHeight="31.0" prefWidth="107.0" style="-fx-background-color: blue;" text="New Game"
+                        textFill="#f01313">
+                    <font>
+                        <Font name="Bauhaus 93" size="16.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="exit" layoutX="47.0" layoutY="432.0" mnemonicParsing="false" onAction="#caroBoardExit"
+                        prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: red;" text="Exit"
+                        textFill="#252522">
+                    <font>
+                        <Font name="Bauhaus 93" size="16.0"/>
+                    </font>
+                </Button>
+                <Separator prefWidth="200.0"/>
+                <Separator layoutY="86.0" prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: red;"/>
+                <Separator layoutY="155.0" prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: red;"/>
+                <Separator layoutY="196.0" prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: red;"/>
+                <Separator layoutY="242.0" prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: red;"/>
+                <Separator layoutY="315.0" prefHeight="5.0" prefWidth="190.0" style="-fx-background-color: red;"/>
+                <Separator layoutX="190.0" orientation="VERTICAL" prefHeight="319.0" prefWidth="0.0"
+                           style="-fx-background-color: red;"/>
+                <Separator orientation="VERTICAL" prefHeight="319.0" prefWidth="0.0"
+                           style="-fx-background-color: red;"/>
+                <Separator prefHeight="5.0" prefWidth="190.0" style="-fx-background-color: red;"/>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
