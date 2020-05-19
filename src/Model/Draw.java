@@ -6,7 +6,7 @@ import javafx.scene.layout.Pane;
 public class Draw {
     public static Button[][] bt = new Button[FinalValue.btRow][FinalValue.btLine];
     public void caroBoard(Pane gr) {
-        Button oldButton = new Button();
+        Button oldButton = new Button("Nam ");
         oldButton.setLayoutX(205);
         oldButton.setLayoutY(0);
         oldButton.setPrefSize(0, 0);

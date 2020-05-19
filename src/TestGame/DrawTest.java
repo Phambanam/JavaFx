@@ -1,10 +1,14 @@
 package TestGame;
 
 import Model.Draw;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import org.junit.jupiter.api.Test;
-import javafx.scene.control.Button;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
+
 
 class DrawTest {
     Boolean test = true;
@@ -12,6 +16,6 @@ class DrawTest {
     Draw draw = new Draw();
     @Test
     void testCaroBoard() {
-
+        Button button = new Button();
     }
 }
