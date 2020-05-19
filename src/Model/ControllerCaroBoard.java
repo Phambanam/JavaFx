@@ -136,23 +136,27 @@ public class ControllerCaroBoard implements Runnable {
                     if (k % 2 == 0) {
                         lbPlaying.setText(lbName1.getText().toUpperCase() + "'S" + "\nTURN");
                         lbPlaying.setStyle("-fx-text-fill: Red;");
+                        lbPlaying.setId("x");
                     } else {
                         lbPlaying.setText(lbName2.getText().toUpperCase() + "'S" + "\nTURN");
                         lbPlaying.setStyle("-fx-text-fill: Green;");
+                        lbPlaying.setId("o");
                     }
                 } else if (k % 2 == 1) {
                     lbPlaying.setText(lbName1.getText().toUpperCase() + "'S" + "\nTURN");
                     lbPlaying.setStyle("-fx-text-fill: Red;");
+                    lbPlaying.setId("x");
                 } else {
                     lbPlaying.setText(lbName2.getText().toUpperCase() + "'S" + "\nTURN");
                     lbPlaying.setStyle("-fx-text-fill: Green;");
+                    lbPlaying.setId("o");
                 }
                 //write timer thinking
                 second.setText(secondPlaying + " second");
                 //write win
                 if (secondPlaying == 0) {
 
-                    if (lbPlaying.getText().equals(lbName1.getText())) {
+                    if (lbPlaying.getId()=="x") {
                         new AlertWin(lbName2);
                         score2++;
                         lbScore2.setText(String.valueOf(score2));
