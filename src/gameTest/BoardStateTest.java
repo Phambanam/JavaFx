@@ -11,14 +11,14 @@ class BoardStateTest {
     @Test
     void getBoard() {
 
-    assertTrue(boardState.getBoard().length== a.length);
+        assertEquals(boardState.getBoard().length, a.length);
     }
 
     @Test
     void resetBoard() {
         boardState.getBoard()[1][1] = 5;
         boardState.resetBoard();
-      assertTrue(boardState.getBoard()[1][1] == 0);
+        assertEquals(0, boardState.getBoard()[1][1]);
     }
 
     @Test
@@ -59,9 +59,9 @@ class BoardStateTest {
     @Test
     void setPosition() {
         boardState.setPosition(5,6,2);
-        assertTrue(boardState.getBoard()[5][6] == 2);
+        assertEquals(2, boardState.getBoard()[5][6]);
         boardState.setPosition(5,6,3);
-        assertFalse(boardState.getBoard()[5][6] == 2);
+        assertNotEquals(2, boardState.getBoard()[5][6]);
     }
 
 }

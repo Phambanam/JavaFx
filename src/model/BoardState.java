@@ -1,8 +1,6 @@
 
 package model;
 
-import java.util.Arrays;
-
 public class BoardState {
 	// Mang luu lai cac trang thai cac quan co
 	private   int[][] boardArr;

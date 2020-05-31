@@ -3,7 +3,6 @@ package model;
 
 import java.util.Optional;
 import java.util.TimerTask;
-
 import controller.Controller;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
@@ -26,7 +25,6 @@ public class TaskTimer extends TimerTask {
 		Platform.runLater(() -> {
 			if (stop && !end) {
 				end = true;
-				stop = true;
 				dialog("Player " + controller.getPlayerFlag() + " lose");
 			} else {
 				if (!end)
@@ -53,9 +51,8 @@ public class TaskTimer extends TimerTask {
 			 {
 				controller.getView().newGame();
 			}
-		} else {
-			// su dung khi chon khong hoac tat hop thoai
-		}
+		}  // su dung khi chon khong hoac tat hop thoai
+
 	}
 
 	Controller controller;

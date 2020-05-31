@@ -1,10 +1,6 @@
-/**
- *  Giao dien chinh cua tro choi 
- */
 package view;
 
 import java.io.InputStream;
-
 import controller.Controller;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -31,32 +27,22 @@ public class View implements EventHandler<ActionEvent> {
 	private Button btnHuman;
 	private Button btnExit;
 	private Labeled timePlayer1, timePlayer2;
-	private BoardState boardState ;
-	private  Player human;
 
 	// lop dieu khien
 	private Controller controller;
 	// mang quan co khi danh
-	private Button[][] arrayButtonChess = new Button[WIDTH_BOARD][HEIGHT_BOARD];
+	private final Button[][] arrayButtonChess = new Button[WIDTH_BOARD][HEIGHT_BOARD];
 	// khung view
 	private   Stage primaryStage;
 
 	public View() {
 	}
 
-	public Button[][] getArrayButtonChess() {
-		for(int i = 0 ;i< WIDTH_BOARD;i++)
-			for (int j = 0; j< HEIGHT_BOARD;j++){
-				arrayButtonChess[i][j].setId(null);
-			}
-		return arrayButtonChess;
-	}
-
 	public void start(Stage primaryStage) {
 		try {
 			this.primaryStage = primaryStage;
-			boardState = new BoardState();
-			human = new Player(boardState);
+			BoardState boardState = new BoardState();
+			Player human = new Player(boardState);
 			controller = new Controller();
 			controller.setView(this);
 			controller.setPlayer(human);
@@ -175,7 +161,6 @@ public class View implements EventHandler<ActionEvent> {
 
 	// che do 2 nguoi choi
 	public void newGame() {
-		getArrayButtonChess();
 		controller.setEnd(false);
 		controller.setTimePlayer(timePlayer1, timePlayer2);
 		controller.setPlayer(new Player(new BoardState()));

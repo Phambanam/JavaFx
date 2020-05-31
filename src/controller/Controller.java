@@ -1,5 +1,6 @@
 
 package controller;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -7,19 +8,17 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Labeled;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import model.*;
+import model.BoardState;
+import model.Player;
+import model.TaskTimer;
 import view.View;
 import java.io.InputStream;
 import java.util.Optional;
-import java.util.Stack;
 import java.util.Timer;
 
 public class Controller {
     private View view = new View();
     private Player player;
-    private Class<?> classImg; //  lay anh quan co
-    private InputStream o;
-    private InputStream x;
     private Image imageO;
     private Image imageX;
     private boolean end;
@@ -39,9 +38,10 @@ public class Controller {
         end = false;
         sumMovie = 0;
         playerWin = "";
-        classImg = this.getClass();
-        o = classImg.getResourceAsStream("/image/o.png");
-        x = classImg.getResourceAsStream("/image/x.png");
+        //  lay anh quan co
+        Class<?> classImg = this.getClass();
+        InputStream o = classImg.getResourceAsStream("/image/o.png");
+        InputStream x = classImg.getResourceAsStream("/image/x.png");
         imageO = new Image(o);
         imageX = new Image(x);
     }
@@ -73,19 +73,19 @@ public class Controller {
     }
 
 
-    public void play(int x , int y,Button c, Button[][] a) {
+    public void play(int x, int y, Button c, Button[][] a) {
+        getBoardState();
+        if (c.getId() != null) return;
+        if (getPlayerFlag() == 1) {
+            newPlay(x, y, 1, a);
+            setPlayerFlag(2);
+        } else {
             getBoardState();
-            if(c.getId() != null) return;
-            if (getPlayerFlag() == 1) {
-                newPlay(x, y, 1, a);
-                setPlayerFlag(2);
-            } else {
-                getBoardState();
-                if (getPlayerFlag() == 2 ) {
-                   newPlay(x, y, 2, a);
-                    setPlayerFlag(1);
-                }
+            if (getPlayerFlag() == 2) {
+                newPlay(x, y, 2, a);
+                setPlayerFlag(1);
             }
+        }
 
         if (end) {
             timer1.cancel();
@@ -111,7 +111,7 @@ public class Controller {
             playerWin = player + "";
             end = true;
         }
-        if (sumMovie == (getBoardState().height * getBoardState().width)) {
+        if (sumMovie == (BoardState.height * BoardState.width)) {
             playerWin = 2 + "";
             end = true;
         }
@@ -125,13 +125,12 @@ public class Controller {
         alert.setContentText("Do you want play again");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
-           {
+            {
                 view.newGame();
             }
 
-        } else {
-            // su dung khi chon khong hoac dong hoi thoai
-        }
+        }  // su dung khi chon khong hoac dong hoi thoai
+
     }
 
 
@@ -151,9 +150,10 @@ public class Controller {
         timePlayer1.setText("30");
         timePlayer2.setText("30");
         getBoardState().resetBoard();
-        for (int i = 0; i < arrayButtonChess.length; i++) {
-            for (int j = 0; j < arrayButtonChess[i].length; j++) {
-                arrayButtonChess[i][j].setGraphic(null);
+        for (Button[] buttonChess : arrayButtonChess) {
+            for (Button chess : buttonChess) {
+                chess.setGraphic(null);
+                chess.setId(null);
             }
         }
     }
