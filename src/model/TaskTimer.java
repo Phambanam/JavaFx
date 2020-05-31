@@ -28,7 +28,6 @@ public class TaskTimer extends TimerTask {
 				end = true;
 				stop = true;
 				dialog("Player " + controller.getPlayerFlag() + " lose");
-
 			} else {
 				if (!end)
 					as();
@@ -52,7 +51,7 @@ public class TaskTimer extends TimerTask {
 		Optional<ButtonType> result = alert.showAndWait();
 		if (result.get() == ButtonType.OK) {
 			 {
-				controller.view.replayHuman();
+				controller.getView().replayHuman();
 			}
 		} else {
 			// su dung khi chon khong hoac tat hop thoai

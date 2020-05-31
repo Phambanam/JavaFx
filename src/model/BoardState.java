@@ -3,17 +3,20 @@ package model;
 
 public class BoardState {
 	// Mang luu lai cac trang thai cac quan co
-	public static int[][] boardArr;
+	private   int[][] boardArr;
 	// chieu rong cua ban co
-	public int width;
+	public static final int width = 20 ;
 	// chieu cao cua ban co
-	public int height;
+	public static final int height = 20 ;
 	// khoi tao
-	public BoardState(int width, int height) {
+	public BoardState() {
 		boardArr = new int[width][height];
-		this.height = height;
-		this.width = width;
 	}
+
+	public int[][] getBoard() {
+		return this.boardArr;
+	}
+
 	// reset ban co
 	public void resetBoard(){
 		boardArr = new int[width][height];

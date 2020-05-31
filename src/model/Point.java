@@ -13,10 +13,4 @@ public class Point {
 	public void setPlayer(int player) {
 		this.player = player;
 	}
-
-	@Override
-	public String toString() {
-		return x + ";" + y + ";" + player;
-	}
-
 }

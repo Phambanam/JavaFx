@@ -31,24 +31,24 @@ public class View implements EventHandler<ActionEvent> {
 	private Button btnHuman;
 	private Button btnExit;
 	private Labeled timePlayer1, timePlayer2;
-
 	private BoardState boardState ;
 	private  Player human;
+
 	// lop dieu khien
 	Controller controller;
 	// mang quan co khi danh
 	public Button[][] arrayButtonChess;
 	// khung view
-	public static Stage primaryStage;
+	public  Stage primaryStage;
 
 	public View() {
 	}
 
 	public void start(Stage primaryStage) {
 		try {
-			View.primaryStage = primaryStage;
+			this.primaryStage = primaryStage;
 			arrayButtonChess = new Button[WIDTH_BOARD][HEIGHT_BOARD];
-			boardState = new BoardState(WIDTH_BOARD, HEIGHT_BOARD);
+			boardState = new BoardState();
 			human = new Player(boardState);
 			controller = new Controller();
 			controller.setView(this);
@@ -71,12 +71,15 @@ public class View implements EventHandler<ActionEvent> {
 				for (int j = 0; j < HEIGHT_BOARD; j++) {
 					Button button = new Button();
 					button.setPrefSize(40, 40);
-					button.setAccessibleText(i + ";" + j);
 					arrayButtonChess[i][j] = button;
 					root.add(button, j, i);
+					int finalI = i;
+					int finalJ = j;
 					button.setOnAction(event -> {
+							System.out.println(button.getId());
+							System.out.println(controller.getSumMovie());
 						if (!controller.isEnd()) {
-							controller.play(button, arrayButtonChess);
+							controller.play(finalI, finalJ,button, arrayButtonChess);
 						}
 					});
 				}
@@ -168,7 +171,7 @@ public class View implements EventHandler<ActionEvent> {
 	public void replayHuman() {
 		controller.setEnd(false);
 		controller.setTimePlayer(timePlayer1, timePlayer2);
-		controller.setPlayer(new Player(new BoardState(WIDTH_BOARD, HEIGHT_BOARD)));
+		controller.setPlayer(new Player(new BoardState()));
 		controller.setPlayerFlag(1);
 		controller.reset(arrayButtonChess);
 

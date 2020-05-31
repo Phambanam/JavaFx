@@ -12,13 +12,11 @@ import view.View;
 import java.io.InputStream;
 import java.util.Optional;
 import java.util.Stack;
-import java.util.StringTokenizer;
 import java.util.Timer;
 
 public class Controller {
-    public View view;
+    private View view = new View();
     private Player player;
-    private Stack<Point> stack; // ngan xep luu cac nuoc da di
     private Class<?> classImg; //  lay anh quan co
     private InputStream o;
     private InputStream x;
@@ -27,21 +25,29 @@ public class Controller {
     private boolean end;
     private int sumMovie;
     private String playerWin;
+    private BoardState boardState = new BoardState();
 
     public Controller() {
         getComponents();
+    }
+
+    public int getSumMovie() {
+        return sumMovie;
     }
 
     private void getComponents() {
         end = false;
         sumMovie = 0;
         playerWin = "";
-        stack = new Stack<>();
         classImg = this.getClass();
         o = classImg.getResourceAsStream("/image/o.png");
         x = classImg.getResourceAsStream("/image/x.png");
         imageO = new Image(o);
         imageX = new Image(x);
+    }
+
+    public View getView() {
+        return view;
     }
 
     public void setPlayer(Player player) {
@@ -67,17 +73,15 @@ public class Controller {
     }
 
 
-    public void play(Button c, Button[][] a) {
-        StringTokenizer tokenizer = new StringTokenizer(c.getAccessibleText(), ";");
-        int x = Integer.parseInt(tokenizer.nextToken());
-        int y = Integer.parseInt(tokenizer.nextToken());
+    public void play(int x , int y,Button c, Button[][] a) {
             getBoardState();
-            if (getPlayerFlag() == 1 && BoardState.boardArr[x][y] == 0) {
+            if(c.getId() != null) return;
+            if (getPlayerFlag() == 1 && boardState.getBoard()[x][y] == 0) {
                 newPlay(x, y, 1, a);
                 setPlayerFlag(2);
             } else {
                 getBoardState();
-                if (getPlayerFlag() == 2 && BoardState.boardArr[x][y] == 0) {
+                if (getPlayerFlag() == 2 && boardState.getBoard()[x][y] == 0) {
                    newPlay(x, y, 2, a);
                     setPlayerFlag(1);
                 }
@@ -97,14 +101,16 @@ public class Controller {
         getBoardState().setPosition(x, y, player);
         if (player == 1) {
             arrayButtonChess[x][y].setGraphic(new ImageView(imageX));
+            arrayButtonChess[x][y].setId("x");
             Point point = new Point(x, y);
             point.setPlayer(1);
-            stack.push(point);
+
         } else {
             arrayButtonChess[x][y].setGraphic(new ImageView(imageO));
+            arrayButtonChess[x][y].setId("o");
             Point point = new Point(x, y);
             point.setPlayer(2);
-            stack.push(point);
+
         }
         sumMovie++;
         if (getBoardState().checkEnd(x, y) == player) {
