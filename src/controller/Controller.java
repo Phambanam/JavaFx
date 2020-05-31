@@ -102,14 +102,9 @@ public class Controller {
         if (player == 1) {
             arrayButtonChess[x][y].setGraphic(new ImageView(imageX));
             arrayButtonChess[x][y].setId("x");
-            Point point = new Point(x, y);
-            point.setPlayer(1);
         } else {
             arrayButtonChess[x][y].setGraphic(new ImageView(imageO));
             arrayButtonChess[x][y].setId("o");
-            Point point = new Point(x, y);
-            point.setPlayer(2);
-
         }
         sumMovie++;
         if (getBoardState().checkEnd(x, y) == player) {
