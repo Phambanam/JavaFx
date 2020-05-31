@@ -35,19 +35,26 @@ public class View implements EventHandler<ActionEvent> {
 	private  Player human;
 
 	// lop dieu khien
-	Controller controller;
+	private Controller controller;
 	// mang quan co khi danh
-	public Button[][] arrayButtonChess;
+	private Button[][] arrayButtonChess = new Button[WIDTH_BOARD][HEIGHT_BOARD];
 	// khung view
-	public  Stage primaryStage;
+	private   Stage primaryStage;
 
 	public View() {
+	}
+
+	public Button[][] getArrayButtonChess() {
+		for(int i = 0 ;i< WIDTH_BOARD;i++)
+			for (int j = 0; j< HEIGHT_BOARD;j++){
+				arrayButtonChess[i][j].setId(null);
+			}
+		return arrayButtonChess;
 	}
 
 	public void start(Stage primaryStage) {
 		try {
 			this.primaryStage = primaryStage;
-			arrayButtonChess = new Button[WIDTH_BOARD][HEIGHT_BOARD];
 			boardState = new BoardState();
 			human = new Player(boardState);
 			controller = new Controller();
@@ -161,20 +168,20 @@ public class View implements EventHandler<ActionEvent> {
 			primaryStage.close();
 		}
 		if (e.getSource() == btnHuman) {
-			replayHuman();
+			newGame();
 		}
 
 	}
 
 
 	// che do 2 nguoi choi
-	public void replayHuman() {
+	public void newGame() {
+		getArrayButtonChess();
 		controller.setEnd(false);
 		controller.setTimePlayer(timePlayer1, timePlayer2);
 		controller.setPlayer(new Player(new BoardState()));
 		controller.setPlayerFlag(1);
 		controller.reset(arrayButtonChess);
-
 	}
 
 

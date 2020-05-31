@@ -51,7 +51,7 @@ public class TaskTimer extends TimerTask {
 		Optional<ButtonType> result = alert.showAndWait();
 		if (result.get() == ButtonType.OK) {
 			 {
-				controller.getView().replayHuman();
+				controller.getView().newGame();
 			}
 		} else {
 			// su dung khi chon khong hoac tat hop thoai
@@ -59,7 +59,6 @@ public class TaskTimer extends TimerTask {
 	}
 
 	Controller controller;
-
 	public void setController(Controller controller) {
 		this.controller = controller;
 	}

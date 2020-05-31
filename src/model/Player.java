@@ -1,7 +1,7 @@
 package model;
 
 public class Player {
-	BoardState boardState; // ban co de xu li
+	BoardState boardState ; // ban co de xu li
 	int playerFlag = 1; // danh dau la nguoi choi
 	public Player(BoardState board) {
 		this.boardState = board;

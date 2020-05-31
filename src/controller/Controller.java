@@ -104,7 +104,6 @@ public class Controller {
             arrayButtonChess[x][y].setId("x");
             Point point = new Point(x, y);
             point.setPlayer(1);
-
         } else {
             arrayButtonChess[x][y].setGraphic(new ImageView(imageO));
             arrayButtonChess[x][y].setId("o");
@@ -132,7 +131,7 @@ public class Controller {
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
            {
-                view.replayHuman();
+                view.newGame();
             }
 
         } else {
