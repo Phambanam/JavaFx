@@ -173,7 +173,6 @@ public class View implements EventHandler<ActionEvent> {
 
 	}
 
-
 	// che do 2 nguoi choi
 	public void newGame() {
 		getArrayButtonChess();
@@ -183,8 +182,5 @@ public class View implements EventHandler<ActionEvent> {
 		controller.setPlayerFlag(1);
 		controller.reset(arrayButtonChess);
 	}
-
-
-
 
 }

@@ -9,8 +9,7 @@ class BoardStateTest {
 
     @Test
     void checkEnd() {
-         int width = 20;
-         int height = 20;
+
         BoardState boardState = new BoardState();
 
         boardState.getBoard()[1][1] = 1;

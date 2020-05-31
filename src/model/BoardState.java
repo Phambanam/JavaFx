@@ -1,6 +1,8 @@
 
 package model;
 
+import java.util.Arrays;
+
 public class BoardState {
 	// Mang luu lai cac trang thai cac quan co
 	private   int[][] boardArr;
@@ -8,6 +10,7 @@ public class BoardState {
 	public static final int width = 20 ;
 	// chieu cao cua ban co
 	public static final int height = 20 ;
+
 	// khoi tao
 	public BoardState() {
 		boardArr = new int[width][height];
