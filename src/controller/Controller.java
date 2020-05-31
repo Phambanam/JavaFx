@@ -25,7 +25,7 @@ public class Controller {
     private boolean end;
     private int sumMovie;
     private String playerWin;
-    private BoardState boardState = new BoardState();
+
 
     public Controller() {
         getComponents();
@@ -76,12 +76,12 @@ public class Controller {
     public void play(int x , int y,Button c, Button[][] a) {
             getBoardState();
             if(c.getId() != null) return;
-            if (getPlayerFlag() == 1 && boardState.getBoard()[x][y] == 0) {
+            if (getPlayerFlag() == 1) {
                 newPlay(x, y, 1, a);
                 setPlayerFlag(2);
             } else {
                 getBoardState();
-                if (getPlayerFlag() == 2 && boardState.getBoard()[x][y] == 0) {
+                if (getPlayerFlag() == 2 ) {
                    newPlay(x, y, 2, a);
                     setPlayerFlag(1);
                 }
