@@ -98,8 +98,8 @@ public class Controller {
 
 
     public void newPlay(int x, int y, int player, Button[][] arrayButtonChess) {
-        getBoardState().setPosition(x, y, player);
-        if (player == 1) {
+        if(getBoardState().setPosition(x, y, player) == 1)
+        {
             arrayButtonChess[x][y].setGraphic(new ImageView(imageX));
             arrayButtonChess[x][y].setId("x");
         } else {
