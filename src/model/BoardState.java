@@ -112,10 +112,8 @@ public class BoardState {
 		return 0;
 	}
 	// set trang thai cho 1 quan co xac dinh
-	public int setPosition(int x, int y, int player) {
+	public boolean setPosition(int x, int y, int player) {
 		boardArr[x][y] = player;
-		if(player == 1) return 1 ;
-		if(player == 2) return 2;
-		return 0;
+		return true ;
 	}
 }

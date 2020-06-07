@@ -98,7 +98,9 @@ public class Controller {
 
 
     public void newPlay(int x, int y, int player, Button[][] arrayButtonChess) {
-        if(getBoardState().setPosition(x, y, player) == 1)
+
+        if(getBoardState().setPosition(x, y, player))
+        {if(player == 1)
         {
             arrayButtonChess[x][y].setGraphic(new ImageView(imageX));
             arrayButtonChess[x][y].setId("x");
@@ -114,6 +116,7 @@ public class Controller {
         if (sumMovie == (BoardState.height * BoardState.width)) {
             playerWin = 2 + "";
             end = true;
+        }
         }
 
     }
