@@ -69,8 +69,6 @@ public class View implements EventHandler<ActionEvent> {
 					int finalI = i;
 					int finalJ = j;
 					button.setOnAction(event -> {
-							System.out.println(button.getId());
-							System.out.println(controller.getSumMovie());
 						if (!controller.isEnd()) {
 							controller.play(finalI, finalJ,button, arrayButtonChess);
 						}

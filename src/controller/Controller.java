@@ -98,7 +98,6 @@ public class Controller {
 
 
     public void newPlay(int x, int y, int player, Button[][] arrayButtonChess) {
-
         if(getBoardState().setPosition(x, y, player))
         {if(player == 1)
         {
@@ -132,10 +131,8 @@ public class Controller {
                 view.newGame();
             }
 
-        }  // su dung khi chon khong hoac dong hoi thoai
-
+        }
     }
-
 
     public void setView(View view) {
         this.view = view;

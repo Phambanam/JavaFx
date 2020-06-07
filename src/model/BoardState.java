@@ -22,6 +22,15 @@ public class BoardState {
 	public void resetBoard(){
 		boardArr = new int[width][height];
 	}
+
+	// set trang thai cho 1 quan co xac dinh
+	public boolean setPosition(int x, int y, int player) {
+		boardArr[x][y] = player;
+		if(player == 1 || player == 2)
+		return true ;
+		return false;
+	}
+
 	// Check chien thang
 	public int checkEnd(int row, int col) {
 		int r = 0, c = 0;
@@ -111,9 +120,5 @@ public class BoardState {
 		}
 		return 0;
 	}
-	// set trang thai cho 1 quan co xac dinh
-	public boolean setPosition(int x, int y, int player) {
-		boardArr[x][y] = player;
-		return true ;
-	}
+
 }
