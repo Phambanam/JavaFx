@@ -99,7 +99,7 @@ public class Controller {
 
     public void newPlay(int x, int y, int player, Button[][] arrayButtonChess) {
         if(getBoardState().setPosition(x, y, player))
-        {if(player == 1)
+       if(player == 1)
         {
             arrayButtonChess[x][y].setGraphic(new ImageView(imageX));
             arrayButtonChess[x][y].setId("x");
@@ -116,7 +116,6 @@ public class Controller {
             playerWin = 2 + "";
             end = true;
         }
-        }
 
     }
 
@@ -131,8 +130,10 @@ public class Controller {
                 view.newGame();
             }
 
-        }
+        }  // su dung khi chon khong hoac dong hoi thoai
+
     }
+
 
     public void setView(View view) {
         this.view = view;

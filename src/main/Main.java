@@ -4,6 +4,9 @@ package main;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import view.View;
+
+import java.lang.reflect.Array;
+
 public class Main extends Application {
 // Bat dau khoi tao stage
 	@Override
